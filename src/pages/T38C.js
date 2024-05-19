@@ -12,7 +12,8 @@ function T38C() {
     setIsModalOpen(true);
   };
 
-  const closeModal = () => {
+  const closeModal = (e) => {
+    e.stopPropagation();
     console.log("Closing modal");
     setIsModalOpen(false);
     setModalImage('');
@@ -52,7 +53,7 @@ function T38C() {
           based on photos from researchers documents, and several reference sources from
           ENJJPT and other squadrons.
         </p>
-        <div className="external-model-grid">
+        <div className="photo-grid">
           <img
             src={`${process.env.PUBLIC_URL}/images/T-38_External_5.png`}
             alt="External Model"
@@ -65,41 +66,105 @@ function T38C() {
             className="external-model-image"
             onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38_External_1.png`)}
           />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/T-38_External_3.png`}
+            alt="External Model"
+            className="external-model-image"
+            onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38_External_3.png`)}
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/T-38_External_4.png`}
+            alt="External Model"
+            className="external-model-image"
+            onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38_External_4.png`)}
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/T-38_External_6.png`}
+            alt="External Model"
+            className="external-model-image"
+            onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38_External_6.png`)}
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/T-38_External_2.png`}
+            alt="External Model"
+            className="external-model-image"
+            onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38_External_2.png`)}
+          />
         </div>
       </section>
 
       <section className="cockpit-model">
         <h2>Cockpit Model</h2>
         <p>Information and images about the cockpit model of the T-38C.</p>
+        <div className="photo-grid">
         <img
           src={`${process.env.PUBLIC_URL}/images/T-38_Cockpit_1.png`}
           alt="Cockpit Model"
+          className="cockpit-model-image"
           onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38_Cockpit_1.png`)}
         />
+        <img
+          src={`${process.env.PUBLIC_URL}/images/T-38_Cockpit_2.png`}
+          alt="Cockpit Model"
+          className="cockpit-model-image"
+          onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38_Cockpit_2.png`)}
+        />
+        <img
+          src={`${process.env.PUBLIC_URL}/images/T-38_Cockpit_3.png`}
+          alt="Cockpit Model"
+          className="cockpit-model-image"
+          onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38_Cockpit_3.png`)}
+        />
+        <img
+          src={`${process.env.PUBLIC_URL}/images/T-38_Cockpit_4.png`}
+          alt="Cockpit Model"
+          className="cockpit-model-image"
+          onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38_Cockpit_4.png`)}
+        />
+        <img
+          src={`${process.env.PUBLIC_URL}/images/T-38_Cockpit_5.png`}
+          alt="Cockpit Model"
+          className="cockpit-model-image"
+          onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38_Cockpit_5.png`)}
+        />
+        <img
+          src={`${process.env.PUBLIC_URL}/images/T-38_Cockpit_6.png`}
+          alt="Cockpit Model"
+          className="cockpit-model-image"
+          onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38_Cockpit_6.png`)}
+        />
+        </div>
       </section>
 
       <section className="flight-model">
         <h2>Flight Model</h2>
         <p>Information about the flight model of the T-38C.</p>
+        <div className="photo-grid">
         <img
-          src={`${process.env.PUBLIC_URL}/images/T-38_Flight_1.png`}
-          alt="Flight Model"
-          onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38_Flight_1.png`)}
+          src={`${process.env.PUBLIC_URL}/images/T-38_Cockpit_1.png`}
+          alt="Cockpit Model"
+          className="cockpit-model-image"
+          onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38_Cockpit_1.png`)}
         />
+
+        </div>
       </section>
 
       <section className="liveries">
         <h2>Liveries</h2>
         <p>Details about the liveries available for the T-38C.</p>
+        <div className="photo-grid">
         <img
-          src={`${process.env.PUBLIC_URL}/images/T-38_Livery_1.png`}
-          alt="Liveries"
-          onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38_Livery_1.png`)}
+          src={`${process.env.PUBLIC_URL}/images/T-38_Cockpit_1.png`}
+          alt="Cockpit Model"
+          className="cockpit-model-image"
+          onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38_Cockpit_1.png`)}
         />
+        </div>
       </section>
 
       {isModalOpen && (
-        <div className="modal" style={{ display: 'block' }} onClick={closeModal}>
+        <div className="modal" onClick={closeModal}>
           <span className="close" onClick={closeModal}>&times;</span>
           <img className="modal-content" src={modalImage} alt="Enlarged" />
         </div>
