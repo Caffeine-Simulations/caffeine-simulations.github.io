@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../public/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Fix the background image */
+  }
+  
+  .app-container {
+    width: 90%;
+    max-width: 1500px;
+    margin: auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9); /* Optional: add a white background with some opacity */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  

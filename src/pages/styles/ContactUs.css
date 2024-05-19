@@ -1,0 +1,31 @@
+.contact-us {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .contact-info {
+    margin-bottom: 2rem;
+  }
+  
+  .contact-item {
+    margin-bottom: 1rem;
+  }
+  
+  .contact-item h2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-item p {
+    margin: 0;
+  }
+  
+  .contact-item a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  .contact-item a:hover {
+    text-decoration: underline;
+  }
+  
