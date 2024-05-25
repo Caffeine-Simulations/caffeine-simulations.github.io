@@ -41,8 +41,13 @@ function T38C() {
           />
           <ProgressWheelCard
             color="#2196f3"
-            percentage={5}
+            percentage={3}
             title="Flight Model"
+          />
+          <ProgressWheelCard
+            color="black"
+            percentage={5}
+            title="Avionics"
           />
         </div>
       </section>
