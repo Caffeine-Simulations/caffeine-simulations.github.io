@@ -9,7 +9,7 @@ function Mods() {
       <Header title="Mods" />
       <div className="card-container">
         <Card
-          image={`${process.env.PUBLIC_URL}/images/T-38_External_5.png`}
+          image={`${process.env.PUBLIC_URL}/images/External_2.png`}
           title="T-38C Talon"
           link="/mods/t-38c-talon"
           description="The T-38C Talon is a twin-engine, high-altitude, supersonic jet trainer."

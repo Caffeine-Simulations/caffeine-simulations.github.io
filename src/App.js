@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       <div className="app-container">
-        <ImageSlideshow />
+        {/* <ImageSlideshow /> */}
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

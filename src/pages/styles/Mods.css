@@ -1,12 +1,10 @@
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 1rem; /* Adjust padding to remove it from left and right edges */
-  margin: 0 -1rem; /* Negative margin to align the outer cards to the edges */
 }
 
 .card {
-  margin: 1rem; /* Add margin to all sides of the card */
+  /* margin: 1rem; Add margin to all sides of the card */
   flex: 1 1 calc(33.333% - 2rem); /* Adjust for three cards per row with some margin */
   box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
 }
