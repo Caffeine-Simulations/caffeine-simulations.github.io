@@ -15,7 +15,7 @@ function Mods() {
           description="The T-38C Talon is a twin-engine, high-altitude, supersonic jet trainer."
         />
         <Card
-          image={`${process.env.PUBLIC_URL}/images/CAF_ASSET_1.png`}
+          image={`${process.env.PUBLIC_URL}/images/bus.png`}
           title="Caffeine Simulations Asset Pack"
           link="/mods/caffeine-simulations-asset-pack"
           description="A highly detailed asset pack to be released alongside the T-38C Talon."
@@ -25,6 +25,15 @@ function Mods() {
           title='Unoffical "The Way" Support'
           link="/mods/dcs-the-way"
           description='Caffeine Simulations are proud to contribute to and support DCS: The Way'
+        />
+      </div>
+    <Header title="Open Source Projects" />
+      <div className="card-container">
+        <Card
+          image={`${process.env.PUBLIC_URL}/images/F10_map.png`}
+          title="Navdata Plugin"
+          link="https://github.com/DCS-OpenSource/NavDataPlugin"
+          description="A small drop in API to collect navigation data more effeintly in DCS."
         />
       </div>
     </div>
