@@ -35,7 +35,7 @@ const overall = Math.round(
     <div className="t38c-container">
       <Header title="T-38C Progress" />
       <section className="progress-updates">
-        <p>These are estimates…</p>
+        <p>These are estimates, and not indicative of time remaining in the project.</p>
         <div className="progress-grid">
           {modules.map((m) => (
             <ProgressWheelCard
