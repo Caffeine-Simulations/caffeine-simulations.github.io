@@ -30,11 +30,24 @@ function Mods() {
     <Header title="Open Source Projects" />
       <div className="card-container">
         <Card
+          image={`${process.env.PUBLIC_URL}/images/GNS530.png`}
+          title="Garmin GNS530"
+          link=""
+          description="Open Source Replication of the Garmin GNS530 for DCS. Freely available for anyone to use in GA Aircraft."
+        />
+        <Card
+          image={`${process.env.PUBLIC_URL}/images/G5.png`}
+          title="Garmin G5 Suite"
+          link=""
+          description="Open Source Replication of the Garmin G5 for DCS. Either Single or Dual G5 available, with a full suite of features."
+        />
+        <Card
           image={`${process.env.PUBLIC_URL}/images/F10_map.png`}
           title="Navdata Plugin"
           link="https://github.com/DCS-OpenSource/NavDataPlugin"
-          description="A small drop in API to collect navigation data more effeintly in DCS."
+          description="A small drop in API to collect navigation data more efficiently in DCS."
         />
+
         <Card
           image={`${process.env.PUBLIC_URL}/images/theway.png`}
           title='Unoffical "The Way" Support'
