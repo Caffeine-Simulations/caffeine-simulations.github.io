@@ -44,7 +44,7 @@ function Mods() {
         <Card
           image={`${process.env.PUBLIC_URL}/images/F10_map.png`}
           title="Navdata Plugin"
-          link="https://github.com/DCS-OpenSource/NavDataPlugin"
+          link="https://github.com/DCS-OpenSource/NavDataPlugin/wiki"
           description="A small drop in API to collect navigation data more efficiently in DCS."
         />
 
