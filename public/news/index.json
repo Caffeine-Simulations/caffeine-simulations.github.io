@@ -19,5 +19,12 @@
     "date": "2025-01-18",
     "summary": "The first stage of the avionics complete, with core UFCP functions working, and intergrated with the HUD/MFD.",
     "image": "avionics-part1.png"
+  },
+  {
+    "slug": "2025-01-03-multicrew",
+    "title": "Multicrew Tech Demo",
+    "date": "2025-01-03",
+    "summary": "Basic multicrew functionality test",
+    "image": "Cockpit_1.png"
   }
 ]
