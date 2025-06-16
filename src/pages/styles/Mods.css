@@ -14,5 +14,11 @@
   .card {
     flex: 1 1 100%; /* Full width on mobile */
     margin: 0.5rem 0; /* Adjust margin for mobile view */
+    width: 100%;
+    
+  }
+
+  .card-container {
+    flex-direction: column; /* Stack cards vertically on mobile */
   }
 }

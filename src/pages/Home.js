@@ -1,9 +1,21 @@
 // src/pages/Home.js
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles/Home.css';
 import { Link } from 'react-router-dom';
 
 function Home() {
+  const [latestNews, setLatestNews] = useState([]);
+
+  useEffect(() => {
+    fetch(`${process.env.PUBLIC_URL}/news/index.json`)
+      .then(res => res.json())
+      .then(all => {
+        // take the first three entries (already sorted newest → oldest)
+        setLatestNews(all.slice(0, 3));
+      })
+      .catch(err => console.error('Failed loading news index:', err));
+  }, []);
+
   return (
     <div className="home-container">
       {/* Hero section */}
@@ -36,24 +48,22 @@ function Home() {
       <section className="news">
         <h2>Latest News</h2>
         <div className="news-articles">
-          <article className="news-article">
-            <img src="/images/news/front_cockpit_1.png" alt="T-38C Talon Model" className="news-image" />
-            <h3>Cockpit 3D model completed</h3>
-            <p>Our highly detailed 3D model of the T-38C cockpit has been completed. Built using over 300 reference photos and a 3D scan.</p>
-            <Link to="/news/cockpit_model" className="news-link">Read More</Link>
-          </article>
-          <article className="news-article">
-            <img src="/images/news/external_1.png" alt="T-38C Talon Model" className="news-image" />
-            <h3>External Model Progress</h3>
-            <p>Check out the progress of our external model, featuring the PMP engine intakes.</p>
-            <Link to="/news/external_model" className="news-link">Read More</Link>
-          </article>
-          <article className="news-article">
-            {/* <img src="/images/news/discord-growth.jpg" alt="Discord Community" className="news-image" /> */}
-            <h3>Announcing our YouTube Channel</h3>
-            <p>We're proud to announce our new YouTube channel, showcasing all of our progress.</p>
-            <a href="https://www.youtube.com/@CaffeineSimulations" target="_blank" rel="noopener noreferrer" className="news-link">Watch Now</a>
-          </article>
+          {latestNews.map(article => (
+            <article key={article.slug} className="news-article">
+              {article.image && (
+                <img
+                  src={`${process.env.PUBLIC_URL}/news/images/${article.image}`}
+                  alt={article.title}
+                  className="news-image"
+                />
+              )}
+              <h3>{article.title}</h3>
+              <p>{article.summary}</p>
+              <Link to={`/news/${article.slug}`} className="news-link">
+                Read More
+              </Link>
+            </article>
+          ))}
         </div>
       </section>
     </div>
