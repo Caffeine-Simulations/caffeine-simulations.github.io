@@ -12,16 +12,17 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="navbar-logo">Caffeine Simulations</div>
+        <div className="navbar-logo"><Link to="/" onClick={() => setIsOpen(false)}>Caffeine Simulations</Link></div>
         <button className="navbar-toggle" onClick={toggleMenu}>
           ☰
         </button>
         <ul className={`navbar-menu ${isOpen ? 'active' : ''}`}>
-          <li className="navbar-item">
-            <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
-          </li>
+
           <li className="navbar-item">
             <Link to="/mods" onClick={() => setIsOpen(false)}>Mods</Link>
+          </li>
+          <li className="navbar-item">
+            <Link to="/news" onClick={() => setIsOpen(false)}>News</Link>
           </li>
           <li className="navbar-item">
             <Link to="/about-us" onClick={() => setIsOpen(false)}>About Us</Link>

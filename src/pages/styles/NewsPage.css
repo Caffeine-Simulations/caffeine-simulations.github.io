@@ -1,0 +1,28 @@
+.news-page {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 1rem;
+    color: white;
+}
+
+.youtube-embed {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    position: relative;
+    width: 100%;   /* or your desired max width */
+    height: 315px;  /* 16:9 aspect ratio */
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.youtube-embed iframe {
+    position: relative;
+    width: 560px;
+    height: 100%;
+    display: block; /* Removes extra space below iframe */
+    left: 0;
+    top: 0;
+    transform: none;
+}

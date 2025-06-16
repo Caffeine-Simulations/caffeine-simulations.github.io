@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "2025-03-24-cockpit-complete",
+    "title": "Front Cockpit Model is Complete!",
+    "date": "2025-3-24",
+    "summary": "At long last, our T-38C Front Cockpit model is finally complete.",
+    "image": "Cockpit_4.png"
+  },
+  {
+    "slug": "2025-03-06-training-zones",
+    "title": "Training Zones",
+    "date": "2025-3-6",
+    "summary": "Training Zones have been implemented,",
+    "image": "zones.png"
+  },
+  {
+    "slug": "2025-01-18-avionics_1",
+    "title": "Avionics Demo Part 1",
+    "date": "2025-01-18",
+    "summary": "The first stage of the avionics complete, with core UFCP functions working, and intergrated with the HUD/MFD.",
+    "image": "avionics-part1.png"
+  }
+]
