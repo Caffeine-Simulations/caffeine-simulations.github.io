@@ -21,15 +21,24 @@ function T38C() {
   };
 
   const modules = [
-  { color: "#4caf50", percentage: 25, title: "External Model" },
-  { color: "#f44336", percentage: 67, title: "Cockpit Model" },
-  { color: "#2196f3", percentage: 3,  title: "Flight Model" },
-  { color: "black",    percentage: 59, title: "Avionics" },
-];
+    { color: "#4caf50", percentage: 25, title: "External Model" },
+    { color: "#f44336", percentage: 67, title: "Cockpit Model" },
+    { color: "#2196f3", percentage: 3,  title: "Flight Model" },
+    { color: "black",    percentage: 59, title: "Avionics" },
+  ];
 
-const overall = Math.round(
-  modules.reduce((sum, m) => sum + m.percentage, 0) / modules.length
-);
+  const overall = Math.round(
+    modules.reduce((sum, m) => sum + m.percentage, 0) / modules.length
+  );
+
+  // List of YouTube video IDs to embed
+  const youtubeVideos = [
+    'ey-pCZQl-Kc',
+    'iiu2vrhtIQU',
+    'm7KEro2sdNs',
+    '805JXwjy-X8',
+    'b3pDf1XfBE8'
+  ];
 
   return (
     <div className="t38c-container">
@@ -61,90 +70,62 @@ const overall = Math.round(
           ENJJPT and other squadrons.
         </p>
         <div className="photo-grid">
-          <img
-            src={`${process.env.PUBLIC_URL}/images/External_1.png`}
-            alt="External Model"
-            className="external-model-image"
-            onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38_External_1.png`)}
-          />
-          <img
-            src={`${process.env.PUBLIC_URL}/images/External_2.png`}
-            alt="External Model"
-            className="external-model-image"
-            onClick={() => openModal(`${process.env.PUBLIC_URL}/images/External_2.png`)}
-          />
-          <img
-            src={`${process.env.PUBLIC_URL}/images/External_3.png`}
-            alt="External Model"
-            className="external-model-image"
-            onClick={() => openModal(`${process.env.PUBLIC_URL}/images/External_3.png`)}
-          />
-          <img
-            src={`${process.env.PUBLIC_URL}/images/External_4.png`}
-            alt="External Model"
-            className="external-model-image"
-            onClick={() => openModal(`${process.env.PUBLIC_URL}/images/External_4.png`)}
-          />
+          {[1,2,3,4].map((i) => (
+            <img
+              key={i}
+              src={`${process.env.PUBLIC_URL}/images/External_${i}.png`}
+              alt="External Model"
+              className="external-model-image"
+              onClick={() => openModal(`${process.env.PUBLIC_URL}/images/External_${i}.png`)}
+            />
+          ))}
         </div>
       </section>
+
       <Header title="T-38C Cockpit Model" />
       <section className="cockpit-model">
-        <p>The model is made from over 300 high detailed photographs from both real jets and the simulators, as well as a 3D scan to verify our model down to the millimeter.<br></br>
+        <p>The model is made from over 300 high detailed photographs from both real jets and the simulators, as well as a 3D scan to verify our model down to the millimeter.<br />
         A huge thanks to our resident Talon drivers and maintainers for sourcing whatever we asked, and even a few airport staff snapping pictures of Talons when they come to visit.
         </p>
         <p>The Front Cockpit is complete, and is moving on to the next stage, being prepared for texturing. The Rear Cockpit model is now underway, with many of the elements a simple copy paste</p>
         <div className="photo-grid">
-        <img
-          src={`${process.env.PUBLIC_URL}/images/Cockpit_1.png`}
-          alt="Cockpit Model"
-          className="cockpit-model-image"
-          onClick={() => openModal(`${process.env.PUBLIC_URL}/images/Cockpit_1.png`)}
-        />
-        <img
-          src={`${process.env.PUBLIC_URL}/images/Cockpit_2.png`}
-          alt="Cockpit Model"
-          className="cockpit-model-image"
-          onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38_Cockpit_2.png`)}
-        />
-        <img
-          src={`${process.env.PUBLIC_URL}/images/Cockpit_3.png`}
-          alt="Cockpit Model"
-          className="cockpit-model-image"
-          onClick={() => openModal(`${process.env.PUBLIC_URL}/images/Cockpit_3.png`)}
-        />
-        <img
-          src={`${process.env.PUBLIC_URL}/images/Cockpit_4.png`}
-          alt="Cockpit Model"
-          className="cockpit-model-image"
-          onClick={() => openModal(`${process.env.PUBLIC_URL}/images/Cockpit_4.png`)}
-        />
-        <img
-          src={`${process.env.PUBLIC_URL}/images/Cockpit_5.png`}
-          alt="Cockpit Model"
-          className="cockpit-model-image"
-          onClick={() => openModal(`${process.env.PUBLIC_URL}/images/Cockpit_5.png`)}
-        />
-        <img
-          src={`${process.env.PUBLIC_URL}/images/Cockpit_6.png`}
-          alt="Cockpit Model"
-          className="cockpit-model-image"
-          onClick={() => openModal(`${process.env.PUBLIC_URL}/images/Cockpit_6.png`)}
-        />
-                <img
-          src={`${process.env.PUBLIC_URL}/images/Cockpit_7.png`}
-          alt="Cockpit Model"
-          className="cockpit-model-image"
-          onClick={() => openModal(`${process.env.PUBLIC_URL}/images/Cockpit_7.png`)}
-        />
+          {[1,2,3,5,6,7].map((i) => (
+            <img
+              key={i}
+              src={`${process.env.PUBLIC_URL}/images/Cockpit_${i}.png`}
+              alt="Cockpit Model"
+              className="cockpit-model-image"
+              onClick={() => openModal(`${process.env.PUBLIC_URL}/images/Cockpit_${i}.png`)}
+            />
+          ))}
         </div>
       </section>
-      <Header title="T-38C Flight Model" />
-      <section className="flight-model">
-        <p>Information about the flight model of the T-38C. More information to come on this later</p>
-      </section>
-      <Header title="T-38C liveries" />
-      <section className="liveries">
-        <p>Details about the liveries available for the T-38C. More to come later</p>
+
+      <Header title="T-38C Avionics" />
+      <section className="avionics">
+        <p>The T-38C features a highly advanced Navigation system. Based off publicly available manuals, and honed by SME feedback, our reproduction
+          is one of the indepth 4th gen aircraft simulated in DCS World. The T-38C is equipped with GPS Navigation, as well as VOR, TACAN, and ILS, 
+          and is capable of using civilian SIDS and STARS.
+        </p>
+        <p>
+          The Navigation system in DCS is powered by our open sourced NavDataPlugin, which we have made available for all modders to use, featuring
+          airport information, beacons and more. For more information see{' '}<a href="https://github.com/DCS-OpenSource/NavDataPlugin/wiki" target="_blank" rel="noopener noreferrer">here.</a>
+        </p>
+        <div className="video-grid">
+          {youtubeVideos.map((id) => (
+            <div key={id} className="video-container">
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${id}`}
+                title="YouTube video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          ))}
+        </div>
       </section>
 
       {isModalOpen && (
