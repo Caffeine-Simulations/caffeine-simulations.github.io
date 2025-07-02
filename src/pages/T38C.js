@@ -33,11 +33,13 @@ function T38C() {
 
   // List of YouTube video IDs to embed
   const youtubeVideos = [
+    'VYWRZHvv1rI',
     'ey-pCZQl-Kc',
     'iiu2vrhtIQU',
     'm7KEro2sdNs',
     '805JXwjy-X8',
-    'b3pDf1XfBE8'
+    'b3pDf1XfBE8',
+
   ];
 
   return (
@@ -89,7 +91,7 @@ function T38C() {
         </p>
         <p>The Front Cockpit is complete, and is moving on to the next stage, being prepared for texturing. The Rear Cockpit model is now underway, with many of the elements a simple copy paste</p>
         <div className="photo-grid">
-          {[1,2,3,5,6,7].map((i) => (
+          {[11,10,9,8,2,3,5,6,7].map((i) => (
             <img
               key={i}
               src={`${process.env.PUBLIC_URL}/images/Cockpit_${i}.png`}

@@ -1,7 +1,8 @@
 // src/pages/News.js
 import React, { useEffect, useState } from 'react';
 import { Link }              from 'react-router-dom';
-import './styles/News.css';       // make sure you import the CSS
+import './styles/News.css';      
+import Header from '../components/Header';
 
 export default function News() {
   const [articles, setArticles] = useState([]);
@@ -14,7 +15,7 @@ export default function News() {
 
   return (
     <div className="news-list">
-      <h1>News</h1>
+      <Header title="News" />
       <ul>
         {articles.map(article => (
           <li key={article.slug} className="news-card">
