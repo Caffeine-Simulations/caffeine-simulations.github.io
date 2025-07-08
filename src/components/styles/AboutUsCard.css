@@ -1,0 +1,39 @@
+/* ProfileCard.css */
+.profile-card {
+  color: white;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: Row;
+  align-items: center;
+  background-color: black;
+  border-radius: 8px;
+  border: 3px solid rgba(228, 135, 13, 0.548);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+}
+.profile-card__image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile-card__content {
+  margin-left: 15px;
+}
+.profile-card__name {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.profile-card__role {
+  margin: 4px 0;
+  font-size: 1rem;
+  color: #8f8f8f;
+}
+.profile-card__description {
+  margin: 8px 0 0;
+  font-size: 0.9rem;
+  color: #7a7a7a;
+}

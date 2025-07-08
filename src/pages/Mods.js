@@ -21,11 +21,18 @@ function Mods() {
           description="A highly detailed asset pack to be released alongside the T-38C Talon."
         />
         <Card
+          image={`${process.env.PUBLIC_URL}/images/CT4A_in_game_annoucement.png`}
+          title="CT-4E Airtrainer"
+          // link="/mods/caffeine-simulations-asset-pack"
+          description="A test bed airframe for the Garmin Systems, The NavDataPlugin, and various other systems."
+        />
+        {/* <Card
           // image={`${process.env.PUBLIC_URL}/images/bus.png`}
           title="Secret Project #1"
           // link="/mods/caffeine-simulations-asset-pack"
           description="A small, single engine aircraft. Announcement coming soon."
-        />
+        /> */}
+
       </div>
     <Header title="Open Source Projects" />
       <div className="card-container">
