@@ -2,8 +2,21 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
+    padding: 15px 0px 0px 0px;
 }
+
 p,
 h1 {
     color: white;
+}
+
+@media (max-width: 800px) {
+    .profileCardContainer {
+        grid-template-columns: 1fr;
+        padding: 15px 0;
+    }
+    p,
+    h1 {
+        font-size: 1rem;
+    }
 }
