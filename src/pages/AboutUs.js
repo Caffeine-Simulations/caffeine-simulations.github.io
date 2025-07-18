@@ -54,9 +54,9 @@ function AboutUs() {
         <Header title="Artists" />
         <div className="profileCardContainer">
         <ProfileCard
-          imageSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwS70r6aZEg6-wofSf66x7MU7FiZSEFSOIQA&s"
+          imageSrc={`${process.env.PUBLIC_URL}/images/profile_pics/shelter.png`}
           name="Shelter OhOh"
-          role="Lead 3D Artist"
+          role="3D Artist"
           description='Likes all the ugly planes'
         />
         <ProfileCard
@@ -68,7 +68,7 @@ function AboutUs() {
         <ProfileCard
           imageSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwS70r6aZEg6-wofSf66x7MU7FiZSEFSOIQA&s"
           name="Tmux"
-          role="Lead 2D Artist"
+          role="2D Artist"
           description="Did I mention I'm a pilot?"
         />
         <ProfileCard
