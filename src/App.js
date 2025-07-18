@@ -6,6 +6,7 @@ import Navbar    from './components/Navbar';
 import Home      from './pages/Home';
 import Mods      from './pages/Mods';
 import T38C      from './pages/T38C';
+import CT4E      from './pages/CT4E';
 import News      from './pages/News';
 import NewsPage  from './pages/NewsPage';
 import AboutUs   from './pages/AboutUs';
@@ -21,7 +22,8 @@ function App() {
         <Routes>
           <Route path="/"                 element={<Home />} />
           <Route path="/mods"             element={<Mods />} />
-          <Route path="/mods/t-38c-talon" element={<T38C />} />
+          <Route path="/mods/T-38C" element={<T38C />} />
+          <Route path="/mods/CT-4E"        element={<CT4E />} />
           <Route path="/news"             element={<News />} />
           <Route path="/news/:slug"       element={<NewsPage />} />
           <Route path="/about-us"         element={<AboutUs />} />

@@ -1,4 +1,4 @@
-.t38c-container {
+.modpage-container {
   width: 100%;
   max-width: 1500px;
   margin: auto;
@@ -7,12 +7,12 @@
   color:white;
 }
 
-.t38c-header {
+.modpage-header {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.t38c-header h1 {
+.modpage-header h1 {
   margin-bottom: 0.5rem;
 }
 

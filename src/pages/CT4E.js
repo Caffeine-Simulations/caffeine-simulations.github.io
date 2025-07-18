@@ -3,7 +3,7 @@ import ProgressWheelCard from '../components/ProgressWheelCard';
 import './styles/ModPage.css';
 import Header from '../components/Header';
 
-function T38C() {
+function CT4E() {
   const [modalImage, setModalImage] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -21,30 +21,29 @@ function T38C() {
   };
 
   const modules = [
-    { color: "#4caf50", percentage: 25, title: "External Model" },
-    { color: "#f44336", percentage: 67, title: "Cockpit Model" },
+    { color: "#4caf50", percentage: 10, title: "External Model" },
+    { color: "#f44336", percentage: 15, title: "Cockpit Model" },
     { color: "#2196f3", percentage: 3,  title: "Flight Model" },
-    { color: "black",    percentage: 59, title: "Avionics" },
+    { color: "black",    percentage: 20, title: "Avionics" },
   ];
 
   const overall = Math.round(
     modules.reduce((sum, m) => sum + m.percentage, 0) / modules.length
   );
 
-  // List of YouTube video IDs to embed
-  const youtubeVideos = [
-    'VYWRZHvv1rI',
-    'ey-pCZQl-Kc',
-    'iiu2vrhtIQU',
-    'm7KEro2sdNs',
-    '805JXwjy-X8',
-    'b3pDf1XfBE8',
-
-  ];
+  // // List of YouTube video IDs to embed
+  // const youtubeVideos = [
+  //   'VYWRZHvv1rI',
+  //   'ey-pCZQl-Kc',
+  //   'iiu2vrhtIQU',
+  //   'm7KEro2sdNs',
+  //   '805JXwjy-X8',
+  //   'b3pDf1XfBE8',
+  // ];
 
   return (
     <div className="modpage-container">
-      <Header title="T-38C Progress Tracker" />
+      <Header title="CT-4E Progress Tracker" />
       <section className="progress-updates">
         <p>These are estimates, and not indicative of time remaining in the project.</p>
         <div className="progress-grid">
@@ -65,55 +64,54 @@ function T38C() {
         </div>
       </section>
 
-      <Header title="T-38C External Model" />
+      <Header title="CT-4E External Model" />
       <section className="external-model">
-        <p>The T-38C Talon Project for DCS features a highly detailed external model
-          based on photos from researchers documents, and several reference sources from
-          ENJJPT and other squadrons.
-        </p>
+        <p>Our CT-4E external model is currently a standin model from the web, we will update this when we have a more accurate model.</p>
         <div className="photo-grid">
-          {[1,2,3,4].map((i) => (
+          {[1].map((i) => (
             <img
               key={i}
-              src={`${process.env.PUBLIC_URL}/images/T-38C/External_${i}.png`}
+              src={`${process.env.PUBLIC_URL}/images/CT-4E/External_${i}.png`}
               alt="External Model"
               className="external-model-image"
-              onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38C/External_${i}.png`)}
+              onClick={() => openModal(`${process.env.PUBLIC_URL}/images/CT-4E/External_${i}.png`)}
             />
           ))}
         </div>
       </section>
 
-      <Header title="T-38C Cockpit Model" />
+      <Header title="CT-4E Cockpit Model" />
       <section className="cockpit-model">
-        <p>The model is made from over 300 high detailed photographs from both real jets and the simulators, as well as a 3D scan to verify our model down to the millimeter.<br />
-        A huge thanks to our resident Talon drivers and maintainers for sourcing whatever we asked, and even a few airport staff snapping pictures of Talons when they come to visit.
-        </p>
-        <p>The Front Cockpit is complete, and is moving on to the next stage, being prepared for texturing. The Rear Cockpit model is now underway, with many of the elements a simple copy paste</p>
+        <p>The CT-4E cockpit model is currently a stand-in model from the web, we will update this when we have a more accurate model.<br />
+        The Garmin avionics in the cockpit have been the focus for now, other gauges will be filled out when the art team becomes available</p>
         <div className="photo-grid">
-          {[11,10,9,8,2,3,5,6,7].map((i) => (
             <img
-              key={i}
-              src={`${process.env.PUBLIC_URL}/images/T-38C/Cockpit_${i}.png`}
+              key={"garmin"}
+              src={`${process.env.PUBLIC_URL}/images/CT-4E/garmin.png`}
               alt="Cockpit Model"
               className="cockpit-model-image"
-              onClick={() => openModal(`${process.env.PUBLIC_URL}/images/T-38C/Cockpit_${i}.png`)}
+              onClick={() => openModal(`${process.env.PUBLIC_URL}/images/CT-4E/garmin.png`)}
             />
-          ))}
+            <img
+              key={"GNS530"}
+              src={`${process.env.PUBLIC_URL}/images/CT-4E/GNS530.png`}
+              alt="Cockpit Model"
+              className="cockpit-model-image"
+              onClick={() => openModal(`${process.env.PUBLIC_URL}/images/CT-4E/GNS530.png`)}
+            />
         </div>
       </section>
 
-      <Header title="T-38C Avionics" />
+      <Header title="CT-4E Avionics" />
       <section className="avionics">
-        <p>The T-38C features a highly advanced Navigation system. Based off publicly available manuals, and honed by SME feedback, our reproduction
-          is one of the indepth 4th gen aircraft simulated in DCS World. The T-38C is equipped with GPS Navigation, as well as VOR, TACAN, and ILS, 
-          and is capable of using civilian SIDS and STARS.
+        <p>The CT-4E will feature a full Garmin avionics suite, including the GNS530 and G5 systems, in addition to the standard set of gauges. <br />
+          We plan to intergrate Navigraph navigation data into the garmins, including SIDS/STARS.
         </p>
         <p>
           The Navigation system in DCS is powered by our open sourced NavDataPlugin, which we have made available for all modders to use, featuring
           airport information, beacons and more. For more information see{' '}<a href="https://github.com/DCS-OpenSource/NavDataPlugin/wiki" target="_blank" rel="noopener noreferrer">here.</a>
         </p>
-        <div className="video-grid">
+        {/* <div className="video-grid">
           {youtubeVideos.map((id) => (
             <div key={id} className="video-container">
               <iframe
@@ -127,7 +125,7 @@ function T38C() {
               />
             </div>
           ))}
-        </div>
+        </div> */}
       </section>
 
       {isModalOpen && (
@@ -140,4 +138,4 @@ function T38C() {
   );
 }
 
-export default T38C;
+export default CT4E;
