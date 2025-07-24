@@ -68,7 +68,7 @@ function CT4E() {
       <section className="external-model">
         <p>Our CT-4E external model is currently a standin model from the web, we will update this when we have a more accurate model.</p>
         <div className="photo-grid">
-          {[1].map((i) => (
+          {[1, 2].map((i) => (
             <img
               key={i}
               src={`${process.env.PUBLIC_URL}/images/CT-4E/External_${i}.png`}
