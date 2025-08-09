@@ -1,24 +1,36 @@
-.card-container {
+/* Container for the entire Mods page */
+.mods {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
-.card {
-  /* margin: 1rem; Add margin to all sides of the card */
-  flex: 1 1 calc(33.333% - 2rem); /* Adjust for three cards per row with some margin */
-  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+/* Wrapper for the page content */
+.mods-wrap {
+  width: 100%;
+  max-width: 1500px;
+  padding: 0 1rem;
 }
 
-/* Responsive styling for mobile */
-@media (max-width: 768px) {
-  .card {
-    flex: 1 1 100%; /* Full width on mobile */
-    margin: 0.5rem 0; /* Adjust margin for mobile view */
-    width: 100%;
-    
+/* Grid layout for the cards */
+.mods-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 1.25rem 0;
+}
+
+/* Adjust to 2 columns below 1000px */
+@media (max-width: 1000px) {
+  .mods-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .card-container {
-    flex-direction: column; /* Stack cards vertically on mobile */
+/* Adjust to 1 column below 640px */
+@media (max-width: 640px) {
+  .mods-grid {
+    grid-template-columns: 1fr;
   }
 }

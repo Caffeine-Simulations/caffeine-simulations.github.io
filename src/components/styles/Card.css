@@ -1,83 +1,109 @@
+/* --- Card.css (replacement) --- */
+:root {
+  --surface: rgba(12, 12, 14, 0.65);
+  --surface-hover: rgba(12, 12, 14, 0.85);
+  --text: #fff;
+  --brand: #ff7f50;
+  --brand-strong: #e6683c;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.card, .card * { box-sizing: border-box; }
+
+/* Let the parent GRID size the card; fill the grid cell */
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  border: 3px solid rgba(228, 135, 13, 0.548);
-  border-radius: 8px;
-  overflow: hidden;
-  text-align: center;
-  margin: 1rem;
-  transition: box-shadow 0.3s ease;
-  flex: 1 1 calc(33.333% - 2rem); /* Adjust for three cards per row with some margin */
-  box-sizing: border-box;
-  background-color: rgba(0, 0, 0, 0.8); /* Add a solid background color */
-  color: white;
-  max-width: calc(33.333% - 2rem);
+  width: 100%;
+  height: 100%;
+  margin: 0;                               /* grid gap handles spacing */
+  background: var(--surface);
+  color: var(--text);
+  border: 2px solid var(--brand);
+  border-radius: 16px;
+  overflow: hidden;                         /* image hugs rounded corners */
+  box-shadow: var(--shadow);
+  transition: transform 150ms ease, background 150ms ease, border-color 150ms ease;
 }
 
-.card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.card:hover,
+.card:focus-within {
+  background: var(--surface-hover);
+  border-color: var(--brand-strong);
+  transform: translateY(-1px);
 }
 
+/* Whole card is clickable; NO padding so image hits the corners */
 .card-link {
-  text-decoration: none;
-  color: inherit;
-  flex: 1;
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
+/* Media area – consistent height, clean crop */
 .card-image-container {
+  position: relative;
   width: 100%;
-  height: 256px; /* Set a fixed height for images */
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: rgba(255,255,255,0.03);
 }
-
 .card-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
-  object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+  height: 100%;
+  object-fit: cover;
 }
 
+/* Body */
 .card-content {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
   flex: 1;
 }
-
 .card-title {
-  margin: 0.5rem 0;
-  font-size: 1.2rem;
-  font-weight: bold;
+  margin: 0 0 0.25rem 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.2;
 }
-
 .card-description {
   margin: 0;
-  color: #555;
+  color: #d0d0d0;
+  line-height: 1.45;
 }
 
+/* CTA */
 .view-details-button {
-  display: block;
-  padding: 0.5rem 1rem;
-  margin: 1rem auto;
-  background-color: rgba(228, 135, 13, 0.548);
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  display: inline-flex;
   align-self: center;
+  margin: 0 0 1rem 0;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--brand);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--brand);
+  background: transparent;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease, transform 80ms ease;
 }
-
-.view-details-button:hover {
-  background-color: black;
+.view-details-button:hover,
+.view-details-button:focus-visible {
+  background: var(--brand);
+  color: #0d0d0f;
+  border-color: var(--brand);
+  outline: none;
 }
+.view-details-button:active { transform: translateY(1px); }
 
-/* Responsive styling for mobile */
-@media (max-width: 768px) {
-  .card {
-    flex: 1 1 100%; /* Full width on mobile */
-    max-width: 100%;
-  }
+/* Optional text size tweak on small screens */
+@media (max-width: 640px) {
+  .card-title { font-size: 1.05rem; }
 }
