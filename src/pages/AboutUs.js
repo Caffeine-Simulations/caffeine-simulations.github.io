@@ -77,6 +77,12 @@ function AboutUs() {
           role="Sound Designer"
           description='Sound design god'
         />
+        <ProfileCard
+          imageSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwS70r6aZEg6-wofSf66x7MU7FiZSEFSOIQA&s"
+          name="Ross"
+          role="Guest 3D Artist"
+          description='SkyForge Studios - TukTuk and ENJJPT Bus for Caffeine Simulations Asset Pack'
+        />
         </div>
         
         <Header title="Livery Artists" />
