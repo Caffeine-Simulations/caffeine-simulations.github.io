@@ -41,6 +41,13 @@ export default function Mods() {
             target="_blank"
           />
           <Card
+            image={`${process.env.PUBLIC_URL}/images/Digitize_points.png`}
+            title="Chart Digitizer"
+            link="https://github.com/DCS-OpenSource/chart-digitizer"
+            description="A tool to convert paper performance charts into a digital format for use in DCS."
+            target="_blank"
+          />
+          <Card
             image={`${process.env.PUBLIC_URL}/images/CT-4E/GNS530.png`}
             title="Garmin GNS530"
             link=""
@@ -53,19 +60,39 @@ export default function Mods() {
             description="Open Source Replication of the Garmin G5 for DCS. Either Single or Dual G5 available, with a full suite of features."
           />
           <Card
-            image={`${process.env.PUBLIC_URL}/images/F10_map.png`}
-            title="Navdata Plugin"
-            link="https://github.com/DCS-OpenSource/NavDataPlugin/wiki"
-            description="A small drop in API to collect navigation data more efficiently in DCS."
-            target="_blank"
-          />
-          <Card
             image={`${process.env.PUBLIC_URL}/images/theway.png`}
             title='Unoffical "The Way" Support'
             link="/mods/dcs-the-way"
             description='Caffeine Simulations are proud to contribute to and support DCS: The Way'
           />
         </section>
+
+        <Header title="Modding Plugins" />
+
+        <section className="mods-grid">
+          <Card
+            image={`${process.env.PUBLIC_URL}/images/F10_map.png`}
+            title="NavdataPlugin"
+            link="https://modding.caffeinesimulations.com/Aircraft/Lua/Plugins/NavDataPlugin/"
+            description="A small drop in API to collect navigation data more efficiently in DCS."
+            target="_blank"
+          />
+          <Card
+            image={`${process.env.PUBLIC_URL}/images/weapon_system.png`}
+            title="WeaponSystemPlugin"
+            link="https://modding.caffeinesimulations.com/Aircraft/Lua/Plugins/WeaponSystemPlugin/"
+            description="A simple plugin to cleanup how avSimpleWeaponSystem works in DCS."
+            target="_blank"
+          />
+          <Card
+            image="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2021/07/lua-logo-on-gradiant-background.jpg?q=70&fit=contain&w=1200&h=628&dpr=1"
+            title="LuaToolsPlugin"
+            link="https://modding.caffeinesimulations.com/Aircraft/Lua/Plugins/LuaToolsPlugin/"
+            description="A collection of classes to automate or simplify various common tasks in DCS Lua scripting."
+            target="_blank"
+          />
+        </section>
+
       </main>
     </div>
   );
