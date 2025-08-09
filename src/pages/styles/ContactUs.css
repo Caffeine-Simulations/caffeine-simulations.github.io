@@ -1,60 +1,186 @@
 /* ContactUs.css */
 
+/* ===== Theme tokens (adjust to match your site) ===== */
+:root {
+  --surface: rgba(12, 12, 14, 0.65);
+  --surface-hover: rgba(12, 12, 14, 0.85);
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #ffffff;
+  --brand: #ff7f50;
+  --brand-strong: #e6683c;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* ===== Global fix: include padding in element widths ===== */
+.contact-us,
+.contact-us * {
+  box-sizing: border-box;
+}
+
+/* ===== Base page section ===== */
 .contact-us {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #fff;
-  padding: 4rem 1rem;
-}
-
-.contact-us h1 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
-.contact-info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  color: var(--text);
+  background: var(--surface); /* background spans full width */
+  padding: 3.5rem 0 4.5rem; /* no horizontal padding */
+  margin: 0;
   width: 100%;
-  max-width: 1000px;
+  overflow-x: clip; /* prevent accidental horizontal scroll */
 }
 
-.contact-item {
-  background: rgba(0, 0, 0, 0.6);
+.sr-only {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* ===== 2-column main layout ===== */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;   /* mobile first */
+  gap: 1.25rem;
+  max-width: 1500px; /* constrain content inside full-width background */
+  margin: 0 auto;
+}
+
+/* Left side: the 2x2 cards grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;   /* stack on mobile */
+  gap: 1.25rem;
+}
+
+/* ===== Card look (used by both contact-item + embed-card) ===== */
+.contact-item,
+.embed-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(6px);
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+  overflow: clip; /* prevent shadow/hover shift from causing overflow */
+}
+
+.contact-item:hover,
+.contact-item:focus-within,
+.embed-card:hover,
+.embed-card:focus-within {
+  background: var(--surface-hover);
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,0.12);
+}
+
+/* Card header + icon */
+.contact-item-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 0.25rem 0;
+}
+
+.contact-item h2,
+.embed-card h2 {
+  font-size: 1.1rem;
+  line-height: 1.2;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Small gradient icon background */
+.contact-icon {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
   border-radius: 8px;
-  padding: 1.5rem;
-  text-align: center;
-  transition: background 0.3s ease;
+  background: linear-gradient(135deg, var(--brand), var(--brand-strong));
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contact-icon svg {
+  width: 18px; height: 18px;
+  fill: #0d0d0f;
 }
 
-.contact-item:hover {
-  background: rgba(0, 0, 0, 0.8);
+/* Card body text + links */
+.contact-item-body {
+  margin: 0.25rem 0 0.75rem 0;
+  font-size: 0.98rem;
 }
 
-.contact-item h2 {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
-}
-
-.contact-item p {
-  font-size: 1rem;
-}
-
-.contact-item a {
-  color: #ff7f50;
+.contact-item a,
+.embed-card a {
+  color: var(--brand);
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.2s ease;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+.contact-item a:hover,
+.contact-item a:focus-visible,
+.embed-card a:hover,
+.embed-card a:focus-visible {
+  color: var(--brand-strong);
+  border-color: var(--brand-strong);
+  outline: none;
 }
 
-.contact-item a:hover {
-  color: #e6683c;
+/* ===== Discord embed sizing ===== */
+.embed-card .embed-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* mobile/tablet default */
+  border-radius: 12px;
+  overflow: hidden;
+}
+.embed-card iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
-@media (max-width: 600px) {
-  .contact-us h1 {
-    font-size: 2rem;
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .contact-item,
+  .embed-card {
+    transition: none;
+  }
+}
+
+/* ===== Breakpoints ===== */
+
+/* >= 640px: two-up cards in left grid */
+@media (min-width: 640px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* >= 900px: two-column page layout; left 2x2, right embed */
+@media (min-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr 1fr; /* equal columns */
+    align-items: stretch;
+  }
+
+  /* Make cards and embed fill their columns' height */
+  .cards-grid {
+    grid-template-rows: repeat(2, 1fr); /* ensure even 2x2 height */
+  }
+
+  .contact-item,
+  .embed-card {
+    height: 100%;
+  }
+
+  /* Let the embed grow to match the 2x2 stack visually */
+  .embed-card .embed-wrap {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 420px; /* tweak to taste */
   }
 }
