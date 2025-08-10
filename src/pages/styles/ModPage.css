@@ -25,12 +25,8 @@
   margin-bottom: 2rem;
 }
 
-.progress-updates,
-.external-model,
-.cockpit-model,
-.flight-model,
-.avionics a {
-  color: orange;
+a {
+  color: #ff5a00;
 }
 
 .progress-updates,
