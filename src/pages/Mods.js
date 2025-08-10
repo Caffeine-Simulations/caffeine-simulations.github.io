@@ -28,6 +28,12 @@ export default function Mods() {
             link="/mods/caffeine-simulations-asset-pack"
             description="A highly detailed asset pack to be released alongside the T-38C Talon."
           />
+          <Card
+            image={`${process.env.PUBLIC_URL}/images/TukTuk/tuktuk1.png`}
+            title="Assult Tuk Tuk Pack"
+            link="/mods/tuktuk"
+            description="Our first project, a pack of TukTuks for DCS, both armed and unarmed."
+          />
         </section>
 
         <Header title="Open Source Projects" />
